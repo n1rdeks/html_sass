@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* we change 16px default to 10px, after that so easy
+use rem... But, need more adaptive design...
+So, we change default 16px(100%) to 10px.
+Use formula, Luke! 10/16 - .625(62.5%) and write to root */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}

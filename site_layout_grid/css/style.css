@@ -88,12 +88,11 @@ body {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
-  background-clip: text;
-  display: inline-block;
-  color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.2s;
+  background: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  color: transparent;
 }
 .heading-secondary:hover {
   transform: skewY(2deg) skewX(14deg) scale(1.1);
@@ -135,13 +134,26 @@ body {
   margin-top: -20vh;
 }
 
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover;
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+  /* Or, if we don't need normal image, use:
+  transform: skewY(-7deg)
+  after that, for direct children:p
+  & > * { transform skewY(7deg) }
+  */
+  margin-top: -11rem;
+}
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 .header__logo-box {
   position: absolute;
@@ -160,25 +172,15 @@ body {
 }
 
 .row {
+  display: flex;
   max-width: 114rem;
   margin: 0 auto;
 }
-.row:not(:last-child) {
-  margin-bottom: 8rem;
-}
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.row [class^=col-] {
-  float: left;
-}
-.row [class^=col-]:not(:last-child) {
-  margin-right: 2rem;
-}
 .row .col-1-of-2 {
-  width: calc((100% - 2rem) / 2);
+  flex: 1;
+}
+.row .col-1-of-2:not(:last-child) {
+  margin-right: 6rem;
 }
 
 .btn:link, .btn:visited {
@@ -251,9 +253,12 @@ body {
   position: relative;
 }
 .composition__photo {
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
   border-radius: 2px;
   position: absolute;
+  z-index: 1;
+  transition: all 0.5s;
+  outline-offset: 1rem;
 }
 .composition__photo_p1 {
   left: 0;
@@ -266,4 +271,40 @@ body {
 .composition__photo_p3 {
   left: 20%;
   top: 10rem;
+}
+.composition__photo:hover {
+  outline: 1.5rem solid #55c57a;
+  transform: scale(1.05) translateY(-0.5rem);
+  box-shadow: 0 1.7rem 4rem rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.9);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+}
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+  flex: 1;
+}
+.feature-box__icon {
+  font-size: 6rem;
+  margin-bottom: 0.5rem;
+  padding: 1px;
+  display: inline-block;
+  background: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  color: transparent;
+}
+.feature-box:hover {
+  transform: translateY(-1.5rem) scale(1.03);
+}
+.feature-box:not(:last-child) {
+  margin-right: 6rem;
 }

@@ -23,8 +23,8 @@
         transform: translateY(-1.5rem) scale(1.03);
     }
 
-        &:not(:last-child) {
-            margin-right: $gutter-horizontal;
-        }
+    &:not(:last-child) {
+        margin-right: $gutter-horizontal;
+    }
 
 }

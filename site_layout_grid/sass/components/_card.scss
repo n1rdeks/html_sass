@@ -4,14 +4,12 @@
     flex:1;
 
     &__inner {
-        color: #fff;
         height: 50rem;
-        transition: transform 1s ease;
+        border-radius: 10px;
+        transition: transform .8s ease;
         transform-style: preserve-3d;
         position: relative;
-        border-radius: 3px;
         box-shadow: 0 1.5rem 4rem 0 rgba(0,0,0,0.2);
-
 
         &_front, &_back {
             position: absolute;
@@ -19,11 +17,15 @@
             width: 100%;
             height: 100%;
             left: 0;
+            border-radius: 10px;
+            // image always more, than radius, so use overflow
+            overflow: hidden;
+
             backface-visibility: hidden;
         }
 
         &_front {
-            background-color: darkolivegreen;
+            background-color: $color-white;
         }
 
         &_back {
@@ -33,18 +35,86 @@
                 background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark);
             }
         }
-
-
     }
 
     &:hover &__inner {
         transform: rotateY(180deg);
     }
 
-
-
     &:not(:last-child) {
         margin-right: $gutter-horizontal;
     }
 
+    // STYLING FRONT SIDE
+    &__picture {
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+        &_1 {
+            // use path for root compiled file css (/css/style.css).
+            background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark), url(../img/nat-5.jpg);
+        }
+
+        &_2 {
+            background-image: url(../img/nat-5.jpg);
+        }
+
+        &_3 {
+            background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark), url(../img/nat-5.jpg);
+        }
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-align: right;
+        text-transform: uppercase;
+        color: $color-white;
+        width: 65%;
+
+
+        &_first {
+            position: absolute;
+            padding: .1rem 1rem;
+            top: 12rem;
+            right: 2.5rem;
+        }
+
+        &_second {
+            position: absolute;
+            padding: 0rem 1rem;
+            top: 16rem;
+            right: 2.5rem;
+        }
+    }
+
+    &__heading_textbox {
+
+        &_1 {
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85),
+                                rgba($color-secondary-dark, .85));
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-grey-light;
+                }
+            }
+        }
+    }
 }

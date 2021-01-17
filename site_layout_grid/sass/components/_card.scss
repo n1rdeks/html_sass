@@ -5,7 +5,7 @@
 
     &__inner {
         height: 50rem;
-        border-radius: 10px;
+        border-radius: 1rem;
         transition: transform .8s ease;
         transform-style: preserve-3d;
         position: relative;
@@ -17,10 +17,9 @@
             width: 100%;
             height: 100%;
             left: 0;
-            border-radius: 10px;
+            border-radius: 1rem;
             // image always more, than radius, so use overflow
             overflow: hidden;
-
             backface-visibility: hidden;
         }
 
@@ -32,14 +31,17 @@
             transform: rotateY(180deg);
 
             &_color1 {
-                background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark);
+                background-image: linear-gradient(to right bottom,
+                                                  $color-secondary-light,$color-secondary-dark);
             }
             &_color2 {
-                background-image: linear-gradient(to right bottom, $color-primary-light,$color-primary-dark);
+                background-image: linear-gradient(to right bottom,
+                                                  $color-primary-light,$color-primary-dark);
             }
 
             &_color3 {
-                background-image: linear-gradient(to right bottom, $color-tertiary-light,$color-tertiary-dark);
+                background-image: linear-gradient(to right bottom,
+                                                  $color-tertiary-light,$color-tertiary-dark);
             }
         }
     }
@@ -61,15 +63,21 @@
 
         &_1 {
             // use path for root compiled file css (/css/style.css).
-            background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark), url(../img/nat-5.jpg);
+            background-image: linear-gradient(to right bottom,
+                                              $color-secondary-light,$color-secondary-dark),
+                                              url(../img/nat-5.jpg);
         }
 
         &_2 {
-            background-image: linear-gradient(to right bottom, $color-primary-light,$color-primary-dark), url(../img/nat-6.jpg);
+            background-image: linear-gradient(to right bottom,
+                                              $color-primary-light,$color-primary-dark),
+                                              url(../img/nat-6.jpg);
         }
 
         &_3 {
-            background-image: linear-gradient(to right bottom, $color-tertiary-light,$color-tertiary-dark), url(../img/nat-7.jpg);
+            background-image: linear-gradient(to right bottom,
+                                              $color-tertiary-light,$color-tertiary-dark),
+                                              url(../img/nat-7.jpg);
         }
     }
 
@@ -80,7 +88,6 @@
         text-transform: uppercase;
         color: $color-white;
         width: 65%;
-
 
         &_first {
             position: absolute;

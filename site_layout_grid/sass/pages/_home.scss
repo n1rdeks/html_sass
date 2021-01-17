@@ -16,15 +16,19 @@
     clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
     /* Or, if we don't need normal image, use:
     transform: skewY(-7deg)
-    after that, for direct children:p
+    after that, for direct children:
     & > * { transform skewY(7deg) }
     */
     margin-top: -11rem;
-
 }
 
 .section-tours {
     background-color: $color-grey-1;
     padding: 25rem 0 25rem 0;
     margin-top: -12rem;
+}
+
+.section-stories {
+    padding: 15rem 0;
+    background-color: gainsboro;
 }

@@ -35,14 +35,14 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: .2rem;
-    transition: all .2s;
+    transition: all .3s;
     // this block for gradient text
     background: linear-gradient(to right, $color-primary-light, $color-primary-dark);
     background-clip: text;
     color: transparent;
 
     &:hover {
-        transform: skewY(2deg) skewX(14deg) scale(1.1);
+       transform: skewY(2deg) skewX(14deg) scale(1.1);
         text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
     }
 }
